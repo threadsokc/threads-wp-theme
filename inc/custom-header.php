@@ -76,7 +76,7 @@ if ( ! function_exists( 'threads_header_style' ) ) :
 			?>
 			.site-title a,
 			.site-description {
-				color: # <?php echo $header_text_color; ?>;
+				color: <?php echo "#$header_text_color"; ?>;
 			}
 
 			<?php endif; ?>

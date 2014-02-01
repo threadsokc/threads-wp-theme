@@ -38,7 +38,7 @@ if ( ! function_exists( 'threads_setup' ) ) :
 		 *
 		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 		 */
-		//add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
@@ -48,14 +48,14 @@ if ( ! function_exists( 'threads_setup' ) ) :
 		);
 
 		// Enable support for Post Formats.
-		add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+		add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'video', 'quote', 'status', 'link' ) );
 
 		// Setup the WordPress core custom background feature.
 		add_theme_support(
 			'custom-background', apply_filters(
 				'threads_custom_background_args', array(
 					'default-color' => 'ffffff',
-					'default-image' => '',
+					'default-image' => get_template_directory_uri() . '/images/subtle-patterns/pixel_weave.png',
 				)
 			)
 		);
@@ -104,7 +104,7 @@ add_action( 'wp_enqueue_scripts', 'threads_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-//require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
